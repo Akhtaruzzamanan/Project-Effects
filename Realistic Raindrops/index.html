@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realistic Raindrops</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <img id="background" alt="background" src="" />
+    </section>
+    <script src="rainyday.js"></script>
+    <script>
+        function rain() {
+            const image = document.getElementById('background');
+            image.onload = function() {
+                var rainyday = new RainyDay({
+                    image: this,
+                    blur: 10,
+                });
+                rainyday.rain([
+                    [3,2,2]
+                ],50);
+            }
+            image.crossOrigin = 'anonymous';
+            image.src = "flower.jpg"
+        }
+        rain()
+    </script>
+</body>
+</html>
